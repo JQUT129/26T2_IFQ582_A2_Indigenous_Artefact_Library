@@ -4,14 +4,17 @@ from datetime import datetime
 
 bp = Blueprint('main', __name__)
 
+
 @bp.route('/')
 def index():
     return render_template('index.html')
 
-@bp.route('/artefacts')
+
+@bp.route('/artefacts/')
 def artefacts():
     return render_template('artefacts.html')
 
-@bp.route('/review')
+
+@bp.route('/review/')
 def review():
     return render_template('review.html')

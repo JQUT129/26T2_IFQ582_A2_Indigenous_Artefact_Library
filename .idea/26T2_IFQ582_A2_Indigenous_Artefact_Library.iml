@@ -14,7 +14,7 @@
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/../26T2_IFQ582_A2_Indigenous_Artefact_Library\templates" />
+        <option value="$MODULE_DIR$/indigenouslibrary/templates" />
       </list>
     </option>
   </component>
