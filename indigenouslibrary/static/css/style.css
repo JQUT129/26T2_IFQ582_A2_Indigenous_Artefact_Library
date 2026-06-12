@@ -1,0 +1,794 @@
+﻿/* Variables */
+:root {
+    /* Background Variables */
+    --primary-bg-color: #F1EBE4;
+    --secondary-bg-color: #EFE6D2;
+    --tertiary-bg-color: #D8CFBD;
+
+    /* Sidebar Variables */
+    --sidebar-bg-color: #2F281F;
+
+    /* Header Variables */
+    --primary-header-color: #985705;
+    --secondary-header-color: #6B230D;
+    --tertiary-header-color: #5E1D09;
+
+    /* Button Variables */
+    --primary-button-color: #A44C1F;
+    --positive-button-color: #2F6B3A;
+    --positve-button-hover-color: #224e2a;
+    --negative-button-color: #8B2E2E;
+    --negative-button-hover-color: #5e1f1f;
+    --neutral-button-color: #D6A24A;
+    --neutral-button-hover-color: #a37d37;
+
+    /* Text Variables */
+    --primary-text-color: #050505;
+    --secondary-text-color: #A75D29;
+    --primary-header-text-color: #2B241D;
+    --secondary-header-text-color: #E8E8E8;
+    --muted-text-color: #7B7B7B;
+
+    /* Text Status Variables */
+    --text-selected-color: #A75F2B;
+    --text-hover-color: #EA8740;
+    --text-pressed-color: #633A1D;
+
+}
+
+/* Side note, most rem values are gathered through this handy calculator https://nekocalc.com/px-to-rem-converter */
+
+/* Global Sets */
+html,
+body
+{
+    background-color: var(--primary-bg-color);
+}
+
+h1,
+h3
+{
+    color: var(--primary-header-text-color)
+}
+
+h2,
+h4
+{
+    color: var(--secondary-header-text-color)
+}
+
+p,
+a
+{
+    --primary-text-color: #050505;
+    text-decoration: none;
+}
+
+/* Sidebar */
+.sidebar
+{
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+
+    background: var(--sidebar-bg-color);
+    color: var(--secondary-header-text-color);
+}
+
+.sidebar-background-image
+{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.sidebar::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(transparent 0%, var(--sidebar-bg-color) 75%);
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sidebar > *:not(.sidebar-background-image)
+{
+    position: relative;
+    z-index: 2;
+}
+
+
+.sidebar .nav-link
+{
+    color: var(--secondary-header-text-color);
+    font-size: clamp(0.75rem, 1.1vw, 1.35rem);
+    text-decoration: none;
+}
+
+.sidebar .nav-link:hover
+{
+    color: var(--text-hover-color);
+
+}
+
+.sidebar .nav-link:active
+{
+    color: var(--text-pressed-color);
+}
+
+.sidebar .nav-link.active
+{
+    color: var(--text-selected-color);
+}
+
+.sidebar-brand h1
+{
+    color: var(--secondary-header-text-color);
+    font-size: clamp(0.75rem, 1.1vw, 1.35rem);
+    line-height: 1.1;
+}
+/* End of Sidebar */
+
+/* Landing Page */
+.page-content
+{
+    min-height: 100vh;
+    background-color: var(--primary-bg-color);
+}
+
+.banner-wrapper
+{
+    position: relative;
+    width: 100%;
+    height: clamp(90px, 12vw, 130px);
+    overflow: hidden;
+}
+
+.banner-wrapper > img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(65%);
+}
+
+.banner-overlay
+{
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--secondary-header-text-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+.banner-logo
+{
+    width: clamp(28px, 3vw, 46px);
+    height: clamp(28px, 3vw, 46px);
+    object-fit: contain;
+    margin-bottom: 0.4rem;
+}
+
+.banner-overlay h1
+{
+    color: var(--secondary-header-text-color);
+    font-size: clamp(1.1rem, 2vw, 1.8rem);
+    letter-spacing: 1px;
+}
+
+.welcome-card
+{
+    background-color: var(--secondary-bg-color);
+    border-radius: 6px;
+    padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.welcome-card h2
+{
+    color: var(--primary-header-text-color);
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    line-height: 1.05;
+}
+
+.welcome-text
+{
+    font-size: clamp(0.95rem, 1vw, 1.15rem);
+    color: var(--primary-text-color);
+}
+
+.btn-ail
+{
+    background-color: var(--primary-button-color);
+    color: white;
+    border: none;
+    padding: 0.65rem 2rem;
+    border-radius: 4px;
+}
+
+.btn-ail:hover
+{
+    background-color: var(--secondary-header-color);
+    color: white;
+}
+
+.info-card
+{
+    background-color: var(--secondary-bg-color);
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.info-card-header
+{
+    padding: 0.65rem 0.9rem;
+
+    background: linear-gradient(rgba(94, 29, 9, 0.9), rgba(94, 29, 9, 0.9)), url("../images/sidebar/ail_background_sidebar.png");
+    background-size: cover;
+    background-position: center;
+
+    color: var(--secondary-header-text-color);
+    font-size: clamp(1rem, 1.3vw, 1.35rem);
+}
+
+.info-card-body
+{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.info-card-image
+{
+    width: 100%;
+    height: clamp(110px, 12vw, 170px);
+    object-fit: cover;
+    background-color: white;
+    display: block;
+}
+
+.info-card h3
+{
+    color: var(--primary-header-text-color);
+    font-size: clamp(1rem, 1.5vw, 1.7rem);
+}
+
+.info-card p {
+    color: var(--primary-text-color);
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
+}
+
+.card-link-ail
+{
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+}
+
+.card-link-ail:hover
+{
+    color: var(--text-hover-color);
+}
+
+.event-item
+{
+    background-color: var(--tertiary-bg-color);
+    padding: 0.35rem 0.55rem;
+    margin-bottom: 0.45rem;
+}
+
+.event-item p
+{
+    font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+    color: var(--primary-text-color);
+}
+
+.event-item small
+{
+    color: var(--primary-text-color);
+    font-size: clamp(0.6rem, 0.65vw, 0.75rem);
+}
+/* End of Landing Page */
+
+/* Artefact Page */
+.artefacts-page
+{
+    min-height: 100vh;
+    background-color: var(--primary-bg-color);
+}
+
+.artefacts-header h1
+{
+    color: var(--primary-header-text-color);
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1;
+}
+
+.artefacts-header p
+{
+    color: var(--primary-text-color);
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    max-width: 520px;
+}
+
+.artefact-search
+{
+    background-color: transparent;
+    border: 1px solid var(--primary-header-text-color);
+    border-radius: 6px;
+    color: var(--primary-text-color);
+}
+
+.artefact-search::placeholder
+{
+    color: var(--muted-text-color);
+}
+
+.artefact-control-btn
+{
+    background-color: transparent;
+    border: 1px solid var(--primary-header-text-color);
+    border-radius: 6px;
+    color: var(--muted-text-color);
+}
+
+.artefact-control-btn:hover
+{
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-header-text-color);
+}
+
+
+.artefact-card
+{
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: var(--secondary-bg-color);
+}
+
+.artefact-card img
+{
+    width: 100%;
+    height: clamp(120px, 10vw, 150px); /* Very awkward values, but I give up */
+    object-fit: cover;
+    display: block;
+    background-color: white;
+}
+
+.artefact-card-body
+{
+    padding: 0.7rem;
+}
+
+.artefact-card-body h2
+{
+    color: var(--primary-text-color);
+    font-size: clamp(1rem, 1.1vw, 1.35rem);
+}
+
+.artefact-mob
+{
+    color: var(--secondary-text-color);
+    font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+    font-weight: 600;
+}
+
+.artefact-description
+{
+    color: var(--primary-text-color);
+    font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+    line-height: 1.1;
+    margin-bottom: 1.8rem;
+}
+
+.artefact-link
+{
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+}
+
+.artefact-link:hover
+{
+    color: var(--text-hover-color);
+}
+
+.restricted-card img,
+.restricted-card .artefact-card-body
+{
+    filter: blur(4px);
+}
+
+.restricted-overlay
+{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(239, 230, 210, 0.35);
+}
+
+.restricted-overlay h2
+{
+    color: #7a0000;
+    font-size: clamp(0.95rem, 1vw, 1.2rem);
+}
+
+.restricted-btn
+{
+    background-color: var(--primary-button-color);
+    color: white;
+    border: none;
+    padding: 0.35rem 2rem;
+    border-radius: 6px;
+    margin-top: 0.4rem;
+}
+
+.restricted-btn:hover
+{
+    background-color: var(--secondary-header-color);
+    color: white;
+}
+/* End of Artefact Page */
+
+/* Artefact View Page */
+.artefact-view-page
+{
+    min-height: 100vh;
+    background-color: var(--primary-bg-color);
+}
+
+.artefact-back-btn
+{
+    background-color: var(--primary-button-color);
+    color: var(--secondary-header-text-color);
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.artefact-back-btn span
+{
+    margin-left: 1rem;
+}
+
+.artefact-back-btn:hover
+{
+    background-color: var(--primary-button-color);
+}
+
+
+.artefact-request-btn,
+.artefact-report-btn {
+    color: var(--secondary-header-text-color);
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: clamp(0.95rem, 1.1vw, 1.25rem);
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.artefact-request-btn {
+    background-color: var(--positive-button-color);
+}
+
+.artefact-request-btn:hover {
+    background-color: var(--positve-button-hover-color);
+    color: white;
+}
+
+.artefact-report-btn {
+    background-color: var(--negative-button-color);
+}
+
+.artefact-report-btn:hover {
+    background-color: var(--negative-button-hover-color);
+    color: white;
+}
+
+.artefact-image-panel {
+    min-height: calc(100vh - 8rem);
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+}
+
+.artefact-view-image {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+}
+
+.artefact-info-panel {
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.artefact-panel-header {
+    background-color: var(--secondary-bg-color);
+    padding: 1.2rem 2rem;
+}
+
+.artefact-panel-header h1 {
+    color: var(--primary-header-text-color);
+    font-size: clamp(1.6rem, 2vw, 2.5rem);
+}
+
+.artefact-panel-body {
+    padding: 2rem;
+}
+
+.artefact-panel-body p {
+    color: var(--primary-text-color);
+    font-size: clamp(1rem, 1.05vw, 1.25rem);
+    line-height: 1.45;
+}
+
+.artefact-panel-body h2 {
+    color: var(--primary-text-color);
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+}
+
+.artefact-description-long {
+    max-width: 95%;
+}
+
+.metadata-item {
+    border-right: 1px solid rgba(47, 40, 31, 0.2);
+}
+
+.metadata-item:last-child {
+    border-right: none;
+}
+/* End of Artefact View Page */
+
+/* Review Artefact Page */
+.review-artefact-page
+{
+    min-height: 100vh;
+    background-color: var(--primary-bg-color);
+}
+
+/* Image Panel */
+.review-image-panel
+{
+    min-height: calc(100vh - 6rem);
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+}
+
+.review-artefact-image
+{
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+}
+
+.review-info-panel,
+.review-form-panel
+{
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.review-panel-header
+{
+    background-color: var(--secondary-bg-color);
+    padding: 1.25rem 1.75rem;
+}
+
+.review-panel-header h1
+{
+    color: var(--primary-header-text-color);
+    font-size: clamp(1.5rem, 2vw, 2.25rem);
+}
+
+.review-panel-body
+{
+    padding: 1.75rem;
+}
+
+.review-panel-body h2
+{
+    color: var(--primary-text-color);
+    font-size: clamp(1rem, 1.2vw, 1.35rem);
+}
+
+.review-panel-body p
+{
+    color: var(--primary-text-color);
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
+    line-height: 1.55;
+}
+
+.metadata-item
+{
+    border-right: 1px solid rgba(47, 40, 31, 0.2);
+}
+
+.metadata-item:last-child
+{
+    border-right: none;
+}
+
+.review-option
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 1rem;
+    border-radius: 6px;
+
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+}
+
+.review-option-left
+{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.review-icon
+{
+    width: 2.1rem;
+    height: 2.1rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    color: white;
+    font-weight: 800;
+    font-size: 1.35rem;
+}
+
+.review-option input
+{
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--primary-button-color);
+}
+
+/* Review Type Colours */
+.review-accept
+{
+    background-color: var(--positive-button-color);
+    color: white;
+}
+
+.review-deny
+{
+    background-color: var(--negative-button-color);
+    color: white;
+}
+
+.review-changes
+{
+    background-color: var(--neutral-button-color);
+    color: white;
+}
+.review-accept:hover
+{
+    background-color: var(--positve-button-hover-color);
+}
+.review-deny:hover
+{
+    background-color: var(--negative-button-hover-color);
+}
+.review-changes:hover
+{
+    background-color: var(--neutral-button-hover-color);
+}
+
+.comment-box-wrapper
+{
+    position: relative;
+}
+
+.review-comments
+{
+    min-height: 190px;
+    resize: none;
+
+    padding: 1rem;
+    padding-bottom: 2.5rem;
+}
+
+.comment-count
+{
+    position: absolute;
+    right: 1rem;
+    bottom: 0.8rem;
+
+    color: var(--muted-text-color);
+    font-size: 0.9rem;
+}
+
+.review-actions
+{
+    display: flex;
+    gap: 1rem;
+}
+
+.submit-review-btn,
+.save-draft-btn {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 6px;
+
+    font-weight: 700;
+    font-size: clamp(0.9rem, 1vw, 1.15rem);
+}
+
+.submit-review-btn {
+    background-color: var(--positive-button-color);
+    color: white;
+    border: none;
+}
+
+.submit-review-btn:hover {
+    background-color: var(--positve-button-hover-color);
+    color: white;
+}
+
+.save-draft-btn {
+    background-color: var(--neutral-button-color);
+    color: var(--primary-text-color);
+    border: 1px solid rgba(47, 40, 31, 0.25);
+}
+
+.save-draft-btn:hover {
+    background-color: var(--neutral-button-hover-color);
+    color: white;
+}
+/* End of Artefact Review Page */
