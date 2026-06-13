@@ -1,10 +1,57 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Australian Indigenous Library</title>
-</head>
-<body>
 
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Australian Indigenous Library</title>
+
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo/favicon.ico') }}">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div class="row align-items-center w-100">
+                        <div class="col">
+                            <img src="{{ url_for('static', filename='img/logo/ail_logo.png') }}" alt="AIL Logo">
+                            <a class="navbar-brand" href="#">
+                                Australian Indigenous Library
+                            </a>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="navbar-nav d-inline-flex flex-row">
+                                <a class="nav-link" href="#">Artefact</a>
+                                <a class="nav-link" href="#">Collections</a>
+                                <a class="nav-link" href="#">What's On</a>
+                                <a class="nav-link" href="#">Visit</a>
+                            </div>
+                        </div>
+
+                        <div class="col text-end">
+                            <a class="nav-link d-inline-block" href="#">
+                                Login / Sign Up
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+
+        <footer class="footer text-lg-start m-0 p-3">
+            <div class="container mx-auto">
+                <p>2026 &copy; Australian Indigenous Library</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
 </html>

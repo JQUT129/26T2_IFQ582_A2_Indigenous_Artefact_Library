@@ -13,6 +13,15 @@
     --secondary-header-color: #6B230D;
     --tertiary-header-color: #5E1D09;
 
+    /* Card Header Variables */
+    --primary-card-header-color: #985705;
+    --secondary-card-header-color: #6B230D;
+    --tertiary-card-header-color: #5E1D09;
+
+    /* Card Variables */
+    --primary-card-bg-color: #EFE6D2;
+    --secondary-card-bg-color: #D8CFBD;
+
     /* Button Variables */
     --primary-button-color: #A44C1F;
     --positive-button-color: #2F6B3A;
@@ -40,12 +49,31 @@
 
 /* Global Sets */
 header,
-section,
-main,
+section
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--primary-bg-color);
+}
+
 body
 {
     margin: 0;
     padding: 0;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-bg-color);
+}
+
+main
+{
+    padding: 0;
+    margin: 0;
+
+    flex: 1;
 }
 
 /* Navbar */
@@ -53,6 +81,7 @@ body
 {
     margin: 0;
     padding: 0;
+
     background-color: var(--sidebar-bg-color);
 }
 
@@ -63,7 +92,33 @@ body
 }
 /* End of Navbar */
 
+/* Footer */
+footer
+{
+    background-color: var(--sidebar-bg-color);
+}
+/* End of Footer */
+
+/* Cards */
+.card
+{
+    background-color: var(--primary-card-bg-color);
+}
+
+.card-header
+{
+    background-color: var(--primary-card-header-color)
+}
+/* End of Cards */
+
 /* Landing Page */
+.landing-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--primary-bg-color);
+}
 
 /* End of Landing Page */
 
