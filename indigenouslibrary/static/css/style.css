@@ -1,0 +1,139 @@
+﻿/* Variables */
+:root {
+    /* Background Variables */
+    --primary-bg-color: #F1EBE4;
+    --secondary-bg-color: #EFE6D2;
+    --tertiary-bg-color: #D8CFBD;
+
+    /* Navbar Variables */
+    --sidebar-bg-color: #2F281F;
+
+    /* Header Variables */
+    --primary-header-color: #985705;
+    --secondary-header-color: #6B230D;
+    --tertiary-header-color: #5E1D09;
+
+    /* Card Header Variables */
+    --primary-card-header-color: #985705;
+    --secondary-card-header-color: #6B230D;
+    --tertiary-card-header-color: #5E1D09;
+
+    /* Card Variables */
+    --primary-card-bg-color: #EFE6D2;
+    --secondary-card-bg-color: #D8CFBD;
+
+    /* Button Variables */
+    --primary-button-color: #A44C1F;
+    --positive-button-color: #2F6B3A;
+    --positve-button-hover-color: #224e2a;
+    --negative-button-color: #8B2E2E;
+    --negative-button-hover-color: #5e1f1f;
+    --neutral-button-color: #D6A24A;
+    --neutral-button-hover-color: #a37d37;
+
+    /* Text Variables */
+    --primary-text-color: #050505;
+    --secondary-text-color: #A75D29;
+    --primary-header-text-color: #2B241D;
+    --secondary-header-text-color: #E8E8E8;
+    --muted-text-color: #7B7B7B;
+
+    /* Text Status Variables */
+    --text-selected-color: #A75F2B;
+    --text-hover-color: #EA8740;
+    --text-pressed-color: #633A1D;
+
+}
+
+/* Side note, most rem values are gathered through this handy calculator https://nekocalc.com/px-to-rem-converter */
+
+/* Global Sets */
+header,
+section
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--primary-bg-color);
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-bg-color);
+}
+
+main
+{
+    padding: 0;
+    margin: 0;
+
+    flex: 1;
+}
+
+/* Navbar */
+.navbar
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--sidebar-bg-color);
+}
+
+.navbar-expand-lg
+{
+    margin: 0;
+    padding: 0;
+}
+/* End of Navbar */
+
+/* Footer */
+footer
+{
+    background-color: var(--sidebar-bg-color);
+}
+/* End of Footer */
+
+/* Cards */
+.card
+{
+    background-color: var(--primary-card-bg-color);
+}
+
+.card-header
+{
+    background-color: var(--primary-card-header-color)
+}
+/* End of Cards */
+
+/* Landing Page */
+.landing-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--primary-bg-color);
+}
+
+/* End of Landing Page */
+
+/* Artefact Page */
+
+/* End of Artefact Page */
+
+/* Artefact View Page */
+
+/* End of Artefact View Page */
+
+/* Review Artefact Page */
+
+/* Image Panel */
+
+/* Review Type Colours */
+
+/* End of Artefact Review Page */

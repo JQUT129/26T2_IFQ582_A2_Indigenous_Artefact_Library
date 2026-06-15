@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<section class="landing-page">
+    <div class="container-fluid mx-auto w-75 text-center">
+        <img class="p-2" src="{{ url_for('static', filename='img/logo/ail_logo.png') }}" alt="AIL Logo">
+        <h2>Australian Indigenous Library</h2>
+
+        <div class="card m-2">
+            <div class="card-body text-lg-start">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="card-text text-uppercase">Welcome to the Australian Indigenous Library</h5>
+                        <button class="btn btn-primary"> Explore Artefacts </button>
+                    </div>
+                    <div class="col">
+                        <p class="card-text">
+                            Preserving the oldest civilization with CARE. We work in tandem with all communities to
+                            ensure the items are managed respectfully and honestly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Featured Artefact -->
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Featured Artefact
+                    </div>
+                    <div class="card-body">
+                        <img class="card-img" src="{{ url_for('static', filename='img/artefacts/artefact_example_image_01.jpg') }}" alt="Featured Artefact">
+
+                        <div class="card-title">
+                            Artefact Name
+                        </div>
+
+                        <div class="card-subtitle">
+                            Collection · Mob A
+                        </div>
+
+                        <p class="card-text">
+                            The description of the featured artefact would go here!
+                        </p>
+                    </div>
+                    <div class="card-footer text-lg-start">
+                        <a class="card-text" href="#">
+                            View Artefact →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Featured Artefact -->
+
+            <!-- Featured Collection -->
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Featured Collection
+                    </div>
+                    <div class="card-body">
+                        <img class="card-img" src="{{ url_for('static', filename='img/artefacts/artefact_example_image_01.jpg') }}" alt="Featured Artefact">
+
+                        <div class="card-title">
+                            Artefact Name
+                        </div>
+
+                        <div class="card-subtitle">
+                            Collection · Mob A
+                        </div>
+
+                        <p class="card-text">
+                            The description of the featured artefact would go here!
+                        </p>
+                    </div>
+                    <div class="card-footer text-lg-start">
+                        <a class="card-text" href="#">
+                            View Artefact →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Featured Collection -->
+
+            <!-- What's On -->
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        What's On
+                    </div>
+                    <div class="card-body">
+                        <img class="card-img" src="{{ url_for('static', filename='img/artefacts/artefact_example_image_01.jpg') }}" alt="Featured Artefact">
+
+                        <div class="card-title">
+                            Artefact Name
+                        </div>
+
+                        <div class="card-subtitle">
+                            Collection · Mob A
+                        </div>
+
+                        <p class="card-text">
+                            The description of the featured artefact would go here!
+                        </p>
+                    </div>
+                    <div class="card-footer text-lg-start">
+                        <a class="card-text" href="#">
+                            View Artefact →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- End of What's On -->
+        </div>
+    </div>
+</section>
+{% endblock %}
