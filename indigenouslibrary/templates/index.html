@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col">
                         <h5 class="card-text text-uppercase">Welcome to the Australian Indigenous Library</h5>
-                        <button class="btn btn-primary"> Explore Artefacts </button>
+                        <a href="{{url_for('main.artefacts')}}" class="btn btn-primary"> Explore Artefacts </a>
                     </div>
                     <div class="col">
                         <p class="card-text">
@@ -46,7 +46,7 @@
                         </p>
                     </div>
                     <div class="card-footer text-lg-start">
-                        <a class="card-text" href="#">
+                        <a class="card-text" href="{{url_for('main.artefacts')}}">
                             View Artefact →
                         </a>
                     </div>
